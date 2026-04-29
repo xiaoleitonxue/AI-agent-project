@@ -39,9 +39,6 @@ questions = [
     {"role": "user", "content": "要提问的问题"} # 此处通常为循环或单次传入 questions 中的内容
 ]
 
-# 后续通常会调用 client.chat.completions.create(...) 进行模型请求
-
-# 接续之前的逻辑
 
 messages = [
     {"role": "system", "content": f"你是金融专家，将文本分类为 {examples_types}。不清楚的分类为 '不清楚类别'"}
