@@ -10,7 +10,7 @@ client = OpenAI(
 
 messages = [{"role": "user", "content": "你是谁"}]
 completion = client.chat.completions.create(
-    model="qwen2",
+    model="deepseek-r1:8b",
     messages=messages,
     # 通过 extra_body 设置 enable_thinking 开启思考模式
     extra_body={"enable_thinking": True},

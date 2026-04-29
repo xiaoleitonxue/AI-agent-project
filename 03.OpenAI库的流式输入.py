@@ -17,7 +17,7 @@ response = Client.chat.completions.create(
 
 #print(response.choices[0].message.content)
 for chunk in response:
-    print(chunk.choices[0].delta.content,
-          end="",
-          flush=True
+    content = chunk.choices[0].delta.content
+    if content is not None:
+        print(content, end="", flush=True
           )
