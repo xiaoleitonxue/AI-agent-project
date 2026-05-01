@@ -1,4 +1,3 @@
-
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.chat_models.tongyi import ChatTongyi
 
@@ -17,16 +16,19 @@ histroy_data = [
     ("ai", "锄禾日当午，汗滴禾下锄，谁知盘中餐，粒粒皆辛苦"),
 ]
 
-prompt_text = chat_prompt_template.invoke(input={"history": histroy_data}).to_string()
-
-print(prompt_text)
+# prompt_text = chat_prompt_template.invoke(input={"history": histroy_data}).to_string()
+#
+# print(prompt_text)
+#
+# model = ChatTongyi(model="qwen3-max")
+# res = model.invoke(prompt_text)
 
 model = ChatTongyi(model="qwen3-max")
-res = model.invoke(prompt_text)
 
-print(res.content, type(res), type(res.content))
+chain = chat_prompt_template | model
 
-# model = ChatTongyi(model="qwen3-max")
-# chain = chat_prompt_template | model
 # res = chain.invoke(input={"history": histroy_data})
-# print(res.content, type(res), type(res.content))
+# print(res.content)
+
+for res in chain.stream(input={"history": histroy_data}):
+    print(res.content, end="", flush=True)

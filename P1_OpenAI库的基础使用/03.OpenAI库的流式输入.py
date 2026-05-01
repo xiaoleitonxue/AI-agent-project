@@ -1,4 +1,3 @@
-from httpcore import stream
 from openai import OpenAI
 
 Client = OpenAI(

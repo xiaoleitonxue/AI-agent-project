@@ -1,4 +1,3 @@
-from dashscope import model
 from langchain_core.prompts import FewShotPromptTemplate, PromptTemplate
 from langchain_community.llms.tongyi import Tongyi
 
@@ -26,8 +25,12 @@ few_shot_templates = FewShotPromptTemplate(
     # validate_template=True,
 )
 
-prompt_text = few_shot_templates.invoke(input={"input_word": "左"}).to_string()
-print(prompt_text)
+# prompt_text = few_shot_templates.invoke(input={"input_word": "左"}).to_string()
+# print(prompt_text)
+#
+# model = Tongyi(model="qwen-max")
+# print(model.invoke(prompt_text))
 
 model = Tongyi(model="qwen-max")
-print(model.invoke(prompt_text))
+text = few_shot_templates | model
+print(text.invoke(input={"input_word": "左"}))

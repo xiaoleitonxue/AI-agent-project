@@ -1,5 +1,4 @@
 from openai import OpenAI
-import os
 
 # 初始化OpenAI客户端
 client = OpenAI(

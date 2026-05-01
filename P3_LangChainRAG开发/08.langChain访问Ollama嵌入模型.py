@@ -1,6 +1,6 @@
 from langchain_ollama import OllamaEmbeddings
 
-model = OllamaEmbeddings(model="embeddinggemma:300m")
+model = OllamaEmbeddings(model="bge-m3")
 
 # 不用invoke stream
 # embed_query、embed_documents

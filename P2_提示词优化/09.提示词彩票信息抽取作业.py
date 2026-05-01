@@ -1,5 +1,4 @@
 from openai import OpenAI
-from pyexpat.errors import messages
 import json
 
 client = OpenAI(

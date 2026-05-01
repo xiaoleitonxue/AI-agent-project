@@ -11,7 +11,7 @@ ChatPromptTemplate -> BaseChatPromptTemplate -> BasePromptTemplate -> RunnableSe
 template = PromptTemplate.from_template("我的邻居是{lastname}，喜欢{hobby}")
 
 res1 = template.format(lastname="王五", hobby="吃")
-print(res1,type(res1))
+print(res1, type(res1))
 
 res2 = template.invoke(input={"lastname": "张三", "hobby": "粒子"})
 print(res2, type(res2))
