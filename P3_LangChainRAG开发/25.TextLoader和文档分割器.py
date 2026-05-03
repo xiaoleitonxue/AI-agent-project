@@ -1,6 +1,5 @@
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from zipp.glob import separate
 
 loader = TextLoader(file_path="./data/Python基础语法.txt", encoding="utf-8")
 
