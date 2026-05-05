@@ -1,5 +1,4 @@
 from time import sleep
-
 import streamlit as st
 from knowledge_base import KnowledgeBaseService
 
@@ -24,6 +23,9 @@ if uploader_file is not None:
     st.write(f"文件类型: {file_type}  |  大小: {file_size:.2f}KB")
 
     text = uploader_file.getvalue().decode("utf-8")
+
+    # result = st.session_state.service.upload_by_str(text, file_name)
+    # st.write(result)
 
     with st.spinner("上传中..."):
         sleep(1)

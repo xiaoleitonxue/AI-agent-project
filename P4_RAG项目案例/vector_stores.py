@@ -11,7 +11,9 @@ class VectorStoreService(object):
         )
 
     def get_retriever(self):
-        return self.vector_store.as_retriever(search_kwargs={"k": config.similarity_threshold})
+        return self.vector_store.as_retriever(
+            search_kwargs={"k": config.similarity_threshold}
+        )
 
 if __name__ == "__main__":
     from langchain_community.embeddings import DashScopeEmbeddings
