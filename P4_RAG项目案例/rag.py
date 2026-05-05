@@ -60,7 +60,7 @@ class RagService(object):
         chain = (
             {
                 "input": RunnablePassthrough(),
-                "context": RunnableLambda(format_for_retriever) |retriever | format_document
+                "context": RunnableLambda(format_for_retriever) | retriever | format_document
             } | RunnableLambda(format_for_prompt_template) | self.prompt_template | print_prompt | self.chat_model | StrOutputParser()
         )
 

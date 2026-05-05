@@ -23,6 +23,7 @@ if prompt:
 
     ai_res_list = []
     with st.spinner("思考中..."):
+        # time.sleep(1)
         # res = st.session_state["rag"].chain.invoke({"input": prompt}, config.session_config)
         # st.chat_message("assistant").write(res)
         # st.session_state["message"].append({"role": "assistant", "content": res})
